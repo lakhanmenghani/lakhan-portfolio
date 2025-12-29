@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Navbar } from "@/components/navbar";
 
 export const metadata: Metadata = {
   title: "Lakhan Menghani | Technical Product Leader",
@@ -17,13 +15,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className="font-sans antialiased bg-[#0f0f0f] text-gray-200">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>
