@@ -1,28 +1,34 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
     <section className="flex items-center justify-center min-h-screen py-20 md:py-32 text-center">
       <div className="container">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6">
-          Aligning C-Suite Vision with Engineering Execution.
-        </h1>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10">
-          Technical Product Manager driving the roadmap for High-Growth SaaS & Enterprise AI Platforms.
-        </p>
-        <div className="flex justify-center gap-4">
-          <Link href="#timeline">
-            <Button size="lg">My Journey</Button>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <p className="text-sm font-semibold tracking-widest uppercase text-muted-foreground mb-4">
+            Product Leader
+          </p>
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-4">
+            Lakhan Menghani
+          </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-6">
+            Enterprise SaaS. AI Platforms. Data that actually drives decisions.
+          </p>
+          <p className="text-base md:text-lg text-muted-foreground/70 italic max-w-2xl mx-auto mb-12">
+            &ldquo;Building at the intersection of enterprise data, AI, and automation workflows. The messy, real-world kind.&rdquo;
+          </p>
+          <Link href="#experience">
+            <Button size="lg">See how I think</Button>
           </Link>
-          <Link href="mailto:example@example.com">
-            <Button size="lg" variant="secondary">
-              Contact
-            </Button>
-          </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
